@@ -1,0 +1,19 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { CartProvider } from "./contexts/CartContext";
+import "./index.css";
+
+
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <CartProvider>
+          <App />
+        </CartProvider>
+      </QueryClientProvider>
+  </React.StrictMode>
+);
